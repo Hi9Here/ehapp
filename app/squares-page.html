@@ -57,10 +57,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	iron-icon {
 		color: #FFFFFF;
 	}
-	paper-input-container label {
-		color: #FFFFFF;
-		line-height: 44px;
-	}
 
   </style>
 
@@ -69,13 +65,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div id="header" class="header">
 		<div class="sbox">
 			<paper-input-container>
-                        <label>Search <span>{{type}}</span></label>
+					<label>Search <span>{{type}}</span></label>		
   				<input is="iron-input">
 			</paper-input-container>
 		</div>
                 <content></content>	
 	</div>
-
+	
   </template>
 
 </dom-module>
