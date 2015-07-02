@@ -25,6 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
     <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="../bower_components/site-list/site-list.html">
     <link rel="import" href="circles-page.html">
     <link rel="import" href="squares-page.html">
 
@@ -32,8 +33,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       neon-animated-pages {
         height: 100%;
-		background-image: url("images/photos/footerdan.jpg");
-		background-image: no-repeat;
+	background-image: url("images/photos/footerdan.jpg");
+	background-image: no-repeat;
       }
 
     </style>
@@ -81,7 +82,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <circles-page on-circle-click="_onCircleClick"></circles-page>
 
+
         <squares-page on-click="_onSquaresClick"></squares-page>
+
+        <squares-page type="{{type}}"> 
+          <site-list type="{{type}}"> </site-list>    
+          <paper-button on-click="_onSquaresClick"><-</paper-button>
+        </squares-page>
 
       </neon-animated-pages>
 
