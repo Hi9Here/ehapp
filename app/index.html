@@ -81,7 +81,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <circles-page on-circle-click="_onCircleClick"></circles-page>
 
-        <squares-page on-click="_onSquaresClick"></squares-page>
+        <squares-page> <paper-button  on-click="_onSquaresClick">Back</paper-button>  </squares-page>
 
       </neon-animated-pages>
 
@@ -95,9 +95,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.$.pages.selected = 1;
       };
 
-/*       scope._onSquaresClick = function(event) {
+      scope._onSquaresClick = function(event) {
         this.$.pages.selected = 0;
-      }; */
+      }; 
 
     </script>
 
