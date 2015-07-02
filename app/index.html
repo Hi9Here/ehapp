@@ -82,11 +82,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <circles-page on-circle-click="_onCircleClick"></circles-page>
 
-
-        <squares-page on-click="_onSquaresClick"></squares-page>
-
         <squares-page type="{{type}}"> 
-          <site-list type="{{type}}"> </site-list>    
+          <div class="sbox">
+	    <paper-input-container>
+	      <label>Search <span>{{type}}</span></label>		
+              <input is="iron-input" value="{{search}}" />
+	    </paper-input-container>
+	  </div>
+          <site-list type="{{type}}" search="{{search}}"></site-list>    
           <paper-button on-click="_onSquaresClick"><-</paper-button>
         </squares-page>
 
