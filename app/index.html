@@ -1,13 +1,5 @@
 
 <!doctype html>
-<!--
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
 <html>
   <head>
     <title>Essential New Head</title>
@@ -81,7 +73,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <circles-page on-circle-click="_onCircleClick"></circles-page>
 
-        <squares-page on-click="_onSquaresClick"></squares-page>
+        <squares-page> <paper-button  on-click="_onSquaresClick">Back</paper-button>  </squares-page>
 
       </neon-animated-pages>
 
@@ -95,9 +87,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.$.pages.selected = 1;
       };
 
-/*       scope._onSquaresClick = function(event) {
+      scope._onSquaresClick = function(event) {
         this.$.pages.selected = 0;
-      }; */
+      }; 
 
     </script>
 

@@ -48,7 +48,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		width: 50px;
 		font-weight: 300;
 	}
-	  
+
 	paper-input-container {
 		width: 60%;
 		margin-left: auto;
@@ -56,9 +56,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	}
 	iron-icon {
 		color: #FFFFFF;
-	}
-	sbox {
-		display: inline;
 	}
 	paper-input-container label {
 		color: #FFFFFF;
@@ -72,14 +69,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div id="header" class="header">
 		<div class="sbox">
 			<paper-input-container>
-  				<label>Search Hotels</label>
+                        <label>Search <span>{{type}}</span></label>
   				<input is="iron-input">
 			</paper-input-container>
 		</div>
-			
-		
+                <content></content>	
 	</div>
-
 
   </template>
 
