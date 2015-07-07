@@ -85,7 +85,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <neon-animated-pages id="pages" selected="0">
 
-        <circles-page on-circle-click="_onCircleClick"></circles-page>
+        <circles-page on-circle-click="_onCircleClick" filters="{{filters}}"></circles-page>
 
         <squares-page type="{{type}}"> 
           <div class="sbox">
@@ -94,7 +94,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <input is="iron-input" value="{{search::input}}" />
 	    </paper-input-container>
 	  </div>
-          <site-list search="{{search}}"></site-list>    
+          <site-list search="{{search}}" filters="{{filters}}"></site-list>    
           <paper-button on-click="_onSquaresClick"><-</paper-button>
         </squares-page>
 
