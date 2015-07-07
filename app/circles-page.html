@@ -31,7 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       margin: -10px;
       border-radius: 50%;
       background: var(--color-one);
-	  z-index:1000;
+      z-index:1000;
       opacity: 0.9;
     }
 	
@@ -54,30 +54,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </style>
 
   <template>
-
-    <div>
-      <div class="circle">
-		  <h1>
-		  	<span></span>Places
-		  </h1>
-		</div>
-      <div class="circle">
-			<h1>
-		  	<span></span>Hotels
-		  </h1>  
-		</div>
-	  <div class="circle">
-		<h1>
-		  	Things To Do
-		</h1>
-	  </div>
-	   <div class="circle">
-		<h1>
-		  	Food & Drink
-		</h1>
-	  </div>
-    </div>
-
+    <template is="dom-repeat" items="{{top_filters}}" indexAs="n" as="filter" delay="150" >
+      <div>
+        <div class="circle">
+          <h1><span>{{filter.value}}</span></h1>
+        </div>
+      </div>
+    </template>
   </template>
 
 </dom-module>
