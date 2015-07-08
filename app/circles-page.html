@@ -7,53 +7,53 @@
 
 <dom-module id="circles-page">
 
-  <style>
+<style>
 
-    :host {
-      @apply(--layout-horizontal);
-      @apply(--layout-center-center);
-    }
+  :host {
+    @apply(--layout-horizontal);
+    @apply(--layout-center-center);
+  }
 
-   .circle {
-      display: inline-block;
-      box-sizing: border-box;
-      width: 300px;
-      height: 300px;
-      margin: -10px;
-      border-radius: 50%;
-      background: var(--color-one);
-      z-index:1000;
-      opacity: 0.9;
-    }
-	
-	.circle:hover {
-		opacity: 1.0;
-	}
-	 
-	h1 {
-		position:absolute;
-		font-family: Roboto, Helvetica, Arial, sans-serif;
-		color: #fff;
-		margin-top: 120px;
-		margin-left: 60px;
-		font-weight: 300;
-	}
-	span {
-		margin-left: 40px;
-	}
+  .circle {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 250px;
+    height: 250px;
+    margin: -10px;
+    border-radius: 50%;
+    background: var(--color-one);
+    z-index:1000;
+    opacity: 0.9;
+  }
 
-  </style>
+  .circle:hover {
+    opacity: 1.0;
+  }
+
+  h1 {
+    position:absolute;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    color: #fff;
+    margin-top: 90px;
+    margin-left: 30px;
+    font-weight: 300;
+  }
+  span {
+    margin-left: 40px;
+  }
+
+</style>
+
 
   <template>
-    <template is="dom-repeat" items="{{top_filters}}" indexAs="n" as="filter">
-      <div>
+    <div>
+      <template is="dom-repeat" items="{{top_level}}">
         <div class="circle">
-          <h1><span>{{filter.value}}</span></h1>
+          <h1>{{item.name}}</h1>
         </div>
-      </div>
-    </template>
+      </template>
+    </div>
   </template>
-
 </dom-module>
 
 <script>
@@ -67,7 +67,7 @@
     ],
 
     properties: {
-      top_filter:{
+      top_level:{
         type:Array,
         value: [{name:"1"},{name:"2"},{name:"3"}]
       },
