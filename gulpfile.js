@@ -20,6 +20,7 @@ var merge = require('merge-stream');
 var path = require('path');
 var fs = require('fs');
 var glob = require('glob');
+var bower = require('gulp-bower');
 
 var AUTOPREFIXER_BROWSERS = [
   'ie >= 10',
@@ -44,6 +45,10 @@ var styleTask = function (stylesPath, srcs) {
     .pipe(gulp.dest('dist/' + stylesPath))
     .pipe($.size({title: stylesPath}));
 };
+ 
+gulp.task('bower', function() {
+  return bower({cmd: 'update'});
+});
 
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function () {
@@ -179,7 +184,7 @@ gulp.task('precache', function (callback) {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles', 'elements', 'images'], function () {
+gulp.task('serve', ['bower', 'styles', 'elements', 'images'], function () {
   browserSync({
     notify: false,
     // Run as an https by uncommenting 'https: true'
@@ -194,7 +199,7 @@ gulp.task('serve', ['styles', 'elements', 'images'], function () {
     }
   });
 
-  gulp.watch(['app/**/*.html'], reload);
+  gulp.watch(['**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{css}'], ['styles', reload]);
   gulp.watch(['app/elements/**/*.{css}'], ['elements', reload]);
   gulp.watch(['app/{scripts,elements}/**/*.js'], ['jshint']);

@@ -72,7 +72,7 @@
 
       <neon-animated-pages id="pages" selected="0">
 
-        <circles-page on-circle-click="_onCircleClick" top_filter="{{top_filter}}"></circles-page>
+        <circles-page on-circle-click="_onCircleClick" top_level="{{top_filter}}"></circles-page>
 
         <squares-page type="{{type}}"> 
           <div class="sbox">
@@ -82,7 +82,6 @@
 	    </paper-input-container>
 	  </div>
           <site-list search="{{search}}" top_filter="{{top_filter}}"></site-list>    
-          <paper-button on-click="_onSquaresClick"><-</paper-button>
         </squares-page>
 
       </neon-animated-pages>
