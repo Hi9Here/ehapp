@@ -1,16 +1,8 @@
 
 <!doctype html>
-<!--
-Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
 <html>
   <head>
-    <title>Essential New Head</title>
+    <title>Essential Hotels</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -30,18 +22,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <link rel="import" href="squares-page.html">
 
     <style>
-
       neon-animated-pages {
         height: 100%;
       }
-	  body {
-		  width: 100%;
-	background-image: url("images/photos/footerdan.jpg");
-	background-image: no-repeat;
-	  }
-			
-
-
+	    body {
+		    width: 100%;
+	      background-image: url("images/photos/footerdan.jpg");
+	      background-image: no-repeat;
+	    }
     </style>
 
     <style is="custom-style">
@@ -105,11 +93,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script>
 
       var scope = document.querySelector('template[is="dom-bind"]');
-
       scope._onCircleClick = function(event) {
         this.$.pages.selected = 1;
       };
-
       scope._onSquaresClick = function(event) {
         this.$.pages.selected = 0;
       }; 
