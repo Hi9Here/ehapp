@@ -25,7 +25,7 @@
       neon-animated-pages {
         height: 100%;
       }
-	    body {
+       body {
 		    width: 100%;
 	      background: url("images/photos/footerdan.jpg")  no-repeat fixed;
 	    }
@@ -75,13 +75,14 @@
         <circles-page on-circle-click="_onCircleClick" top_level="{{top_filter}}"></circles-page>
 
         <squares-page type="{{type}}"> 
-          <div class="sbox">
-	    <paper-input-container>
-	      <label>Search <span>{{type}}</span></label>		
-              <input is="iron-input" value="{{search::input}}" />
-	    </paper-input-container>
-	  </div>
-          <site-list search="{{search}}" top_filter="{{top_filter}}"></site-list>    
+          <site-list search="{{search}}" top_filter="{{top_filter}}">
+            <div style="background-color: whitesmoke;">
+              <paper-input-container>
+	        <label>Search <span>{{type}}</span></label>		
+                <input is="iron-input" value="{{search::input}}" />
+	      </paper-input-container>
+	    </div>
+          </site-list>    
         </squares-page>
 
       </neon-animated-pages>
