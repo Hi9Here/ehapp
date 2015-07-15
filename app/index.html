@@ -53,6 +53,9 @@
 		  font-size: 30px;
 		  font-weight:300;
 	  }
+	  searchtext {
+		  margin:5px;
+	  }
 
     </style>
 
@@ -78,8 +81,8 @@
           <site-list search="{{search}}" top_filter="{{top_filter}}">
             <div style="background-color: whitesmoke;">
               <paper-input-container>
-	        <label>Search <span>{{type}}</span></label>		
-                <input is="iron-input" value="{{search::input}}" />
+	        <label>Search for Hotels <span>{{type}}</span></label>		
+                <input is="iron-input" value="{{search::input}}"  class="searchtext"/>
 	      </paper-input-container>
 	    </div>
           </site-list>    
