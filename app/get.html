@@ -5,11 +5,16 @@
     <meta charset="utf-8">
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../bower_components/geo-hash-data/geo-hash-data.html">
+    <link rel="import" href="../bower_components/firebase-element/firebase-document.html">
   </head>
   <body>
     <template is="dom-bind">
+      <firebase-document id="firebaseDocument" location="https://hash.firebaseio-demo.com" data="[[data]]">
+      </firebase-document>
       <geo-hash-data output="{{data}}"></geo-hash-data>
       <span>{{data.num}}</span>
+      <span>{{data.data}}</span>
+      
     </template>
   </body>
 </html>
