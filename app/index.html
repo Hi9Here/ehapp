@@ -53,10 +53,13 @@
 		  font-size: 30px;
 		  font-weight:300;
 	  }
-	  searchtext {
-		  margin:5px;
+	  input {
+		  margin: 10px;
+		  font-size: 20px;
 	  }
-
+	  iron-icon {
+		  margin-left: 10px;
+	  }
     </style>
 
   </head>
@@ -68,6 +71,7 @@
 		 <span class="flex"></span>
 		 <span>0800 180 4700</span>
 		 <span class="flex"></span>
+		 <iron-icon icon="refresh"></iron-icon>
 		 <iron-icon icon="search"></iron-icon>
      </paper-toolbar>
 
@@ -82,7 +86,7 @@
             <div style="background-color: whitesmoke;">
               <paper-input-container>
 	        <label>Search for Hotels <span>{{type}}</span></label>		
-                <input is="iron-input" value="{{search::input}}"  class="searchtext"/>
+                <input is="iron-input" value="{{search::input}}"/>
 	      </paper-input-container>
 	    </div>
           </site-list>    
