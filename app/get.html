@@ -5,15 +5,12 @@
     <meta charset="utf-8">
     <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../bower_components/geo-hash-data/geo-hash-data.html">
-    <link rel="import" href="../bower_components/firebase-element/firebase-document.html">
   </head>
   <body>
     <template is="dom-bind">
-      <firebase-document id="firebaseDocument" location="https://essential-map.firebaseio.com/geo/" data="[[data]]">
-      </firebase-document>
       <geo-hash-data output="{{data}}"></geo-hash-data>
       <span>{{data.num}}</span>
-      <span>{{data.data}}</span>
+    <span>{{data}}</span>
       
     </template>
   </body>
