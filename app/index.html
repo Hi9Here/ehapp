@@ -22,12 +22,18 @@
     <link rel="import" href="squares-page.html">
 
     <style>
-      neon-animated-pages {
-        height: 100%;
+	  
+    neon-animated-pages {
+		height: 100%;
       }
-       body {
-		    width: 100%;
-	      background: url("images/photos/footerdan.jpg")  no-repeat fixed;
+    body {
+	    background: url("images/photos/footerdan.jpg")  no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+		height: 100%;
+		width: 100%;
 	    }
     </style>
 
@@ -85,8 +91,8 @@
           <site-list search="{{search}}" filter="{{filter}}" top_filter="{{top_filter}}">
             <div style="background-color: whitesmoke;">
               <paper-input-container>
-                <label>Search <span>{{filter}}</span></label>		
-                <input is="iron-input" value="{{search::input}}"  class="searchtext"/>
+                <label style="font-size:20px;">Search<span>{{filter}}</span></label>		
+                <input is="iron-input" value="{{search::input}}"  class="searchtext" style="font-size:30px; text-align: center; margin-top:25px;"/>
               </paper-input-container>
             </div>
           </site-list>    
