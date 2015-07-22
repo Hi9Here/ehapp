@@ -83,13 +83,11 @@
      </paper-toolbar>
 
     <template is="dom-bind">
-
       <neon-animated-pages id="pages" selected="0">
-
         <circles-page on-circle-click="_onCircleClick" top_level="{{top_filter}}"></circles-page>
 
         <squares-page type="{{type}}"> 
-          <site-list search="{{search}}" filter="{{filter}}" top_filter="{{top_filter}}">
+          <site-list search="{{search}}" filter="{{filter}}" dd="{{dd}}">
             <div style="background-color: whitesmoke;">
               <paper-input-container>
                 <label style="font-size:20px;">Search<span>{{filter}}</span></label>		
@@ -112,7 +110,7 @@
       scope._onSquaresClick = function(event) {
         this.$.pages.selected = 0;
       }; 
-      scope.top_filter = [{name:'Hotels'},{name:'Things to Do'},{name:'Destinations'},{name:'Food & Drink'}] ;
+      scope.dd = [{type:'Hotels'},{type:'Things to Do'},{type:'Destinations'},{type:'Food & Drink'}] ;
     </script>
 
   </body>
