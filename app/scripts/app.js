@@ -23,6 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   // have resolved and content has been stamped to the page
   app.addEventListener('template-bound', function() {
     console.log('Our app is ready to rock!');
+    app.top_filter = [{type:"Hotels"},{type:"Things to Do"},{type:"Destinations"},{type:"Food & Drink"}]
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
