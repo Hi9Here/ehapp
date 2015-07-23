@@ -52,7 +52,7 @@
     <div>
       <template is="dom-repeat" items="{{top_level}}">
         <div class="circle" title="{{item.name}}">
-          <h1>{{item.name}}</h1>
+          <h1 title="{{item.name}}">{{item.name}}</h1>
         </div>
       </template>
     </div>
@@ -104,7 +104,7 @@
 
     _onClick: function(event) {
       var target = event.target;
-      if (target.classList.contains('circle')) {
+      if (target.classList.contains('circle') || target.classList.contains('circles-page')) {
         // configure the page animation
         this.sharedElements = {
           'hero': target

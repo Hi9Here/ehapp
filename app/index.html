@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
   <head>
@@ -42,6 +41,8 @@
       :root {
         --color-one: #33cccc;
         --color-two: #ff9800;
+        --accent-color: #3cc;
+        
       }
 	  paper-toolbar {
       	background-color: #33CCCC;
@@ -77,14 +78,12 @@
 		 <span class="flex"></span>
 		 <span>0800 180 4700</span>
 		 <span class="flex"></span>
-		 <iron-icon icon="refresh"></iron-icon>
-		 <iron-icon icon="search"></iron-icon>
+		 <!-- <iron-icon icon="refresh"></iron-icon>
+		 <iron-icon icon="search"></iron-icon> -->
      </paper-toolbar>
 
     <template is="dom-bind">
-
       <neon-animated-pages id="pages" selected="0">
-
         <circles-page on-circle-click="_onCircleClick" top_level="{{top_filter}}"></circles-page>
 
         <squares-page type="{{type}}"> 
@@ -111,7 +110,6 @@
       scope._onSquaresClick = function(event) {
         this.$.pages.selected = 0;
       }; 
-
     </script>
 
   </body>
