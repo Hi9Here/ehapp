@@ -83,10 +83,26 @@
 		 <iron-icon icon="search"></iron-icon> -->
      </paper-toolbar>
 
-    <template is="dom-bind">
-      <neon-animated-pages id="pages" selected="0">
-        <circles-page on-circle-click="_onCircleClick" set_filters="{{filtered}}" top_level="{{top_filter}}"></circles-page>
+    <template is="dom-bind" id="app">
+      <template is="dom-if" if="{{home_page}}">
+        <neon-animated-pages id="pages" selected="0">
+          <circles-page on-circle-click="_onCircleClick" set_filters="{{filtered}}" top_level="{{top_filter}}"></circles-page>
+   
+          <squares-page type="{{type}}"> 
+            <site-list search="{{search}}" filter="{{filter}}" set_filters="{{filtered}}" top_filter="{{top_filter}}">
+              <div style="background-color: whitesmoke;">
+                <paper-input-container>
+                  <label style="font-size:20px;">Search<span>{{filter}}</span></label>		
+                  <input is="iron-input" value="{{search::input}}"  class="searchtext" style="font-size:30px; text-align: center; margin-top:25px;"/>
+                </paper-input-container>
+              </div>
+            </site-list>    
+          </squares-page>
+   
+        </neon-animated-pages>
 
+      </template>
+      <template is="dom-if" if="{{search_page}}">
         <squares-page type="{{type}}"> 
           <site-list search="{{search}}" filter="{{filter}}" set_filters="{{filtered}}" top_filter="{{top_filter}}">
             <div style="background-color: whitesmoke;">
@@ -97,20 +113,38 @@
             </div>
           </site-list>    
         </squares-page>
-
-      </neon-animated-pages>
-
+      </template>
     </template>
 
     <script>
 
       var scope = document.querySelector('template[is="dom-bind"]');
       scope._onCircleClick = function(event) {
-        this.$.pages.selected = 1;
+//        this.$.pages.selected = 1;
       };
       scope._onSquaresClick = function(event) {
-        this.$.pages.selected = 0;
-      }; 
+//        this.$.pages.selected = 0;
+      };
+      scope.home_page = true;
+      scope.search_page = false;
+      scope.properties = {
+        search:{
+          type: String,
+          observer: "setUrl"
+        },
+        filtered: {
+          type: Object,
+          observer: "setUrl"
+        }
+      };
+      scope.setUrl = function () {
+        for ( var filter in this.filtered){
+          if (filter === "type") {
+            var type = Object.keys(this.filtered.type); 
+            page.redirect("/"+type+"/" + this.search );
+          }
+        }
+      }
     </script>
 
   </body>

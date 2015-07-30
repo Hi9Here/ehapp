@@ -5,17 +5,40 @@
     // client-side router inspired by the Express router
     // More info: https://visionmedia.github.io/page.js/
 
+    page('/:type', function (data) {
+      
+      var app = document.querySelector('template[is="dom-bind"]');
+      app.home_page = false;
+      app.search_page = true;
+      app.search = "";
+      app.filtered = {}
+      app.filtered.type = {}
+      app.filtered.type[data.params.type] = true;
 
-    page('/:type/:search', function (data) {
-
-      var app = document.querySelector('#app');
-      app.search = data.params.search;
-      setTimeout(function(){
-        document.querySelector('paper-filter paper-button[title="'+data.params.type+'"]').click();
-      }, 300);
     });
 
-    page('*', function () {});
+    page('/:type/:search', function (data) {
+      var app = document.querySelector('template[is="dom-bind"]');
+ 
+      app.home_page = false;
+      app.search_page = true;
+      if (data.params.search !== app.search) {
+        app.search = data.params.search;
+      }
+      if (!app.hasOwnProperty("filtered") ) {
+        if (!app.filtered.hasOwnProperty("type") || Object.keys(app.filtered.type) !== data.params.type) { 
+          app.filtered = {}
+          app.filtered.type = {}
+          app.filtered.type[data.params.type] = true;
+        }
+      }
+    });
+
+    page('*', function () { 
+      var app = document.querySelector('template[is="dom-bind"]');
+      app.home_page = true;
+      app.search_page = false;
+    });
     // add #! before urls
     page({
       hashbang: true
