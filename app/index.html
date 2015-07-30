@@ -84,10 +84,10 @@
 
     <template is="dom-bind">
       <neon-animated-pages id="pages" selected="0">
-        <circles-page on-circle-click="_onCircleClick" top_level="{{top_filter}}"></circles-page>
+        <circles-page on-circle-click="_onCircleClick" set_filters="{{filtered}}" top_level="{{top_filter}}"></circles-page>
 
         <squares-page type="{{type}}"> 
-          <site-list search="{{search}}" filter="{{filter}}" top_filter="{{top_filter}}">
+          <site-list search="{{search}}" filter="{{filter}}" set_filters="{{filtered}}" top_filter="{{top_filter}}">
             <div style="background-color: whitesmoke;">
               <paper-input-container>
                 <label style="font-size:20px;">Search<span>{{filter}}</span></label>		
