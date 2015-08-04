@@ -4,44 +4,41 @@
     // We use Page.js for routing. This is a Micro
     // client-side router inspired by the Express router
     // More info: https://visionmedia.github.io/page.js/
+    var app = document.querySelector('template[is="dom-bind"]');
+    var top_filters = ['Hotels','Things to Do','Food & Drink','Destinations'] // TODO app.top_filters;
 
-    page('/:type', function (data) {
-      
-      var app = document.querySelector('template[is="dom-bind"]');
-      app.home_page = false;
-      app.search_page = true;
-      app.search = "";
-      app.filtered = {}
-      app.filtered.type = {}
-      app.filtered.type[data.params.type] = true;
-
-    });
-
-    page('/:type/:search', function (data) {
-      var app = document.querySelector('template[is="dom-bind"]');
- 
-      app.home_page = false;
-      app.search_page = true;
-      if (data.params.search !== app.search && app.search === "") {
-        app.search = data.params.search;
-      }
-      if (!app.hasOwnProperty("filtered") || (typeof app.filtered !== "object") || (app.filtered === null) ) {
-        app.filtered = {};
-      }
-      if (!app.filtered.hasOwnProperty("type")) {
-        app.filtered.type = {};
-      }
-      if (Object.keys(app.filtered.type) !== data.params.type) {
-        app.filtered.type = {};
+    for (var i = 0, len = top_filters.length; i < len; i++) {
+      page('/:'+top_filters[i], function (data) {
+        
+        app.home_page = false;
+        app.search_page = true;
+        app.search = "";
+        app.filtered = {}
+        app.filtered.type = {}
         app.filtered.type[data.params.type] = true;
-      }
-    });
 
-    page('*', function () { 
-      var app = document.querySelector('template[is="dom-bind"]');
-      app.home_page = true;
-      app.search_page = false;
-    });
+      });
+
+      page('/:'+top_filters[i]+'/:search', function (data) {
+        var app = document.querySelector('template[is="dom-bind"]');
+   
+        app.home_page = false;
+        app.search_page = true;
+        if (data.params.search !== app.search && app.search === undefined) {
+          app.search = data.params.search;
+        }
+        if (!app.hasOwnProperty("filtered") || (typeof app.filtered !== "object") || (app.filtered === null) ) {
+          app.filtered = {};
+        }
+        if (!app.filtered.hasOwnProperty("type")) {
+          app.filtered.type = {};
+        }
+        if (Object.keys(app.filtered.type) !== data.params.type) {
+          app.filtered.type = {};
+          app.filtered.type[data.params.type] = true;
+        }
+      });
+    }
     // add #! before urls
     page({
       hashbang: true
