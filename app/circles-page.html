@@ -51,12 +51,14 @@
   <template>
     <div>
       <template is="dom-repeat" items="{{top_level}}">
-        <div class="circle" title="{{item.name}}">
+        
+        <a data-route="{{item.name}}" href="{{item.name}}" ><div class="circle" title="{{item.name}}">
           <h1 title="{{item.name}}">{{item.name}}</h1>
-        </div>
+        </div></a>
+
       </template>
     </div>
-  </template>
+  </template> 
 </dom-module>
 
 <script>
@@ -72,7 +74,7 @@
     properties: {
       top_level:{
         type:Array,
-        value: [{name:"1"},{name:"2"},{name:"3"}]
+        value: [{name:"Hotels"},{name:"Things to Do"},{name:"Destinations"},{name:"Food & Drink"}]
       },
       animationConfig: {
         value: function() {
@@ -109,7 +111,7 @@
         this.sharedElements = {
           'hero': target
         };
-        document.querySelector('paper-filter paper-button[title="'+target.title+'"]').click();
+        // document.querySelector('paper-filter paper-button[title="'+target.title+'"]').click();
         var nodesToScale = [];
         var circles = Polymer.dom(this.root).querySelectorAll('.circle');
         for (var node, index = 0; node = circles[index]; index++) {
