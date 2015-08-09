@@ -25,6 +25,9 @@
       if (data.params.search !== app.search && app.search === "") {
         app.search = data.params.search;
       }
+      if (data.params.search !== app.search && app.search === undefined) {
+        app.search = data.params.search;
+      }
       if (!app.hasOwnProperty("filtered") || (typeof app.filtered !== "object") || (app.filtered === null) ) {
         app.filtered = {};
       }
