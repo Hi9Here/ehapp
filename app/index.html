@@ -102,24 +102,9 @@
               </div>
             </site-list>    
           </squares-page>
-   
         </neon-animated-pages>
-
-      </template>
-      <template is="dom-if" if="{{search_page}}">
-        <squares-page type="{{type}}"> 
-          <site-list search="{{search}}" filter="{{filter}}" set_filters="{{filtered}}" top_filter="{{top_filter}}">
-            <div style="background-color: whitesmoke;">
-              <paper-input-container>
-                <label style="font-size:20px;">Search<span>{{filter}}</span></label>		
-                <input is="iron-input" value="{{search::input}}"  class="searchtext" style="font-size:30px; text-align: center; margin-top:25px;"/>
-              </paper-input-container>
-            </div>
-          </site-list>    
-        </squares-page>
       </template>
     </template>
-
     <script>
 
       var scope = document.querySelector('template[is="dom-bind"]');
