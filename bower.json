@@ -7,7 +7,7 @@
     "paper-elements": "PolymerElements/paper-elements#1.0.1",
     "platinum-elements": "PolymerElements/platinum-elements#1.0.0",
     "page": "visionmedia/page.js#~1.6.3",
-    "site-list": "marcus7777/site-list#dc5899fe1fb34f3721a89dcf430a817221c46efb",
+    "site-list": "marcus7777/site-list",
     "geo-hash-data": "marcus7777/geo-hash-data"
   },
   "devDependencies": {
