@@ -22,7 +22,8 @@
  
       app.home_page = false;
       app.search_page = true;
-      if (data.params.search !== app.search && app.search === "") {
+      if (data.params.search !== app.search && (app.search === "" || app.search === undefined) ) {
+        app._search = data.params.search;
         app.search = data.params.search;
       }
       if (data.params.search !== app.search && app.search === undefined) {
